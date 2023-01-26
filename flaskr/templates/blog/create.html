@@ -8,7 +8,7 @@
   <form method="post">
     <label for="title">Заголовок</label>
     <input name="title" id="title" value="{{ request.form['title'] }}" required>
-    <label for="body">Текст</label>
+    <label for="body">Содержание</label>
     <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
     <input type="submit" value="Save">
   </form>
