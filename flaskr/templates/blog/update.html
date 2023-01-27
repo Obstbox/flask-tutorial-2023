@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Правка "{{ post['title'] }}"{% endblock %}</h1>
+  <h1>{% block title %}Редактирование: "{{ post['title'] }}"{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
@@ -15,6 +15,6 @@
   </form>
   <hr>
   <form action="{{ url_for('blog.delete', id=post['id']) }}" method="post">
-    <input class="danger" type="submit" value="Delete" onclick="return confirm('Вы уверены?');">
+    <input class="danger" type="submit" value="Delete" onclick="return confirm('Сохранить?');">
   </form>
 {% endblock %}
