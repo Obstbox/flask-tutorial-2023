@@ -35,7 +35,7 @@ def register():
             else:
                 return redirect(url_for("auth.login"))
 
-        flash(error)
+        flash(error, 'error')
 
     return render_template('auth/register.html')
 
@@ -60,7 +60,7 @@ def login():
             session['user_id'] = user['id']
             return redirect(url_for('index'))
 
-        flash(error)
+        flash(error, 'error')
 
     return render_template('auth/login.html')
 
@@ -78,7 +78,7 @@ def load_logged_in_user():
 @bp.route('/logout')
 def logout():
     session.clear()
-    return redirect(usr_for('index'))
+    return redirect(url_for('index'))
 
 def login_required(view):
     @functools.wraps(view)

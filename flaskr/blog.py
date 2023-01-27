@@ -30,7 +30,7 @@ def create():
             error = 'Заголовок (title) обязателен.'
 
         if error is not None:
-            flash(error)
+            flash(error, 'error')
         else:
             db = get_db()
             db.execute(
@@ -73,7 +73,7 @@ def update(id):
             error = 'Заголовок обязателен.'
 
         if error is not None:
-            flash(error)
+            flash(error, 'error')
         else:
             db = get_db()
             db.execute(
